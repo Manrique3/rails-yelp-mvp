@@ -1,0 +1,15 @@
+<h1>Detalle de Restaurants</h1>
+
+<p><strong>Nombre:</strong> <%= @restaurant.name %></p>
+<p><strong>Dirección:</strong> <%= @restaurant.address %></p>
+<p><strong>Número Teléfono:</strong> <%= @restaurant.phone_number%></p>
+<p><strong>Categoría:</strong> <%= @restaurant.category%></p>
+
+<%= link_to 'Back to restaurant List', restaurants_path, class: "btn btn-secondary" %>
+
+<% @restaurant.reviews.each do |review|%>
+    <li>
+      <%= review.rating %>
+      <%= review.content %>
+    </li>
+  <% end %>
