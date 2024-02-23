@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h1 class="text-center">New Review for <%= @restaurant.name %></h1>
+  <%= simple_form_for [@restaurant, @review], html: { class: "mt-4" } do |f| %>
+    <%= f.input :rating, collection: 0..5, label: "Rating", class: "form-select" %>
+    <%= f.input :content, label: "Review Content", class: "form-control" %>
+    <%= f.submit "Submit Review", class: "btn btn-primary mt-3" %>
+  <% end %>
+  <div class="text-center mt-3">
+    <%= link_to "Back to Restaurant", restaurant_path(@restaurant), class: "btn btn-secondary" %>
+  </div>
+</div>
+
